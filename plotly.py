@@ -1,4 +1,3 @@
-# Import required libraries
 import pandas as pd
 import dash
 import dash_html_components as html
@@ -51,7 +50,6 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                 html.Div(dcc.Graph(id='success-payload-scatter-chart')),
                                 ])
 
-# TASK 2:
 # Add a callback function for `site-dropdown` as input, `success-pie-chart` as output
 @app.callback(
     Output(component_id='success-pie-chart', component_property='figure'),
@@ -67,7 +65,6 @@ def build_graph(site_dropdown):
         piechart = px.pie(data_frame = specific_df, names='class',title='Total Launch for a Specific Site')
         return piechart
 
-# TASK 4:
 # Add a callback function for `site-dropdown` and `payload-slider` as inputs, `success-payload-scatter-chart` as output
 @app.callback(
     Output(component_id='success-payload-scatter-chart', component_property='figure'),
